@@ -1,23 +1,25 @@
 function addAlertToMessageArea(severity, alertMessage, autoDismissInMilliseconds, showDismissButton) {
     console.log(`Queueing new alert: '${alertMessage}'`);
+// ReSharper disable once AssignToImplicitGlobalInFunctionScope
     $messageArea = $("#messageArea");
     var alertLevel = "alert-info";
     var glyph = "glyphicon-info-sign";
     var html;
+    var name = "";
 
-    if (severity == -2) {
+    if (severity === -2) {
         alertLevel = "alert-danger";
         glyph = "glyphicon-remove-sign";
         name = "Error";
-    } else if (severity == -1) {
+    } else if (severity === -1) {
         alertLevel = "alert-warning";
         glyph = "glyphicon-exclamation-sign";
         name = "Warning";
-    } else if (severity == 0) {
+    } else if (severity === 0) {
         alertLevel = "alert-info";
         glyph = "glyphicon-info-sign";
         name = "Info";
-    } else if (severity == 1) {
+    } else if (severity === 1) {
         alertLevel = "alert-success";
         glyph = "glyphicon-ok-sign";
         name = "Success";
